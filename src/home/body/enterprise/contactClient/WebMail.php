@@ -5,12 +5,11 @@
  * Date: 22/02/2017
  * Time: 17:40
  */
-namespace enterprise\contactCliente;
+namespace home\body\enterprise\contactCliente;
 
-use enterprise\model;
+use home\body\enterprise\Model;
 
-
-class webmail extends model
+class WebMail extends Model
 {
     protected $name;
     protected $email;

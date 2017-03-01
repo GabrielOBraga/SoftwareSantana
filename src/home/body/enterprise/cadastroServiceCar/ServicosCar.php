@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace enterprise\cadastroServiceCar;
+namespace home\body\enterprise\cadastroServiceCar;
 
-use enterprise\model;
+use home\body\enterprise\Model;
 
-class servicosCar extends model
+class ServicosCar extends Model
 {
     protected $name;
     protected $email;

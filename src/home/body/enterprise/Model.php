@@ -2,9 +2,9 @@
 
 declare (strict_types=1);
 
-namespace enterprise;
+namespace home\body\enterprise;
 
-class model
+class Model
 {
     public function  save():int
     {

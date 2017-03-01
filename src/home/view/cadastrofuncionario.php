@@ -22,13 +22,7 @@
                     <label for="nome">Nome: </label>
                 </td>
                 <td align="left">
-                    <input type="text" name="email">
-                </td>
-                <td>
-                    <label for="sobrenome">Sobrenome: </label>
-                </td>
-                <td align="left">
-                    <input type="text" name="sobrenome">
+                    <input type="text" name="name">
                 </td>
             </tr>
             <tr>

@@ -6,12 +6,13 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
-use enterprise\cadastroProdutos\produto;
-use enterprise\cadastroProdutos\Funcionario;
-use enterprise\cadastroServiceCar\servicosCar;
-use enterprise\contactCliente\webmail;
-use home\errors\InvalidArgument;
+use home\body\enterprise\cadastroProdutos\produto;
 
+use home\body\enterprise\cadastroProdutos\Funcionario;
+
+use home\body\enterprise\cadastroServiceCar\servicosCar;
+use home\body\enterprise\contactCliente\webmail;
+use home\errors\InvalidArgument;
 
 
 class Controller
@@ -42,6 +43,9 @@ class Controller
         if ( $request->getMethod()=='POST')
         {
             try {
+                $funcionario = new Funcionario('Igor' , '344345355-54');
+                $funcionario->save();
+
                 $this->funcionario = new Funcionario($request->request->get('name'), $request->request->get('cpf'));
                 $this->funcionario->save();
                 $this->session->set('Funcionario', $this->funcionario);
