@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace home\body\enterprise\cadastroServiceCar;
+namespace home\enterprise\cadastroServiceCar;
 
-use home\body\enterprise\Model;
+use home\enterprise\Model;
 
 class ServicosCar extends Model
 {

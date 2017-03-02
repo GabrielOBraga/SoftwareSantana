@@ -1,9 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: gabri
- * Date: 21/02/2017
- * Time: 10:40
- */
+<html>
 
-echo"Janela do Admin";
+<head>
+
+</head>
+
+<body>
+Janela do Administrador
+<form action="cFuncionario">
+    <input type="submit">
+</form>
+
+</body>
+</html>

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Formulário de Cadastro de Funcionarios - Software Otica Santana</title>

@@ -5,9 +5,9 @@
  * Date: 22/02/2017
  * Time: 17:40
  */
-namespace home\body\enterprise\contactCliente;
+namespace home\enterprise\contactCliente;
 
-use home\body\enterprise\Model;
+use home\enterprise\Model;
 
 class WebMail extends Model
 {

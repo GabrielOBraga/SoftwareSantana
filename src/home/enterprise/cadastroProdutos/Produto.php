@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace home\body\enterprise\cadastroProdutos;
+namespace home\enterprise\cadastroProdutos;
 
 
-use home\body\enterprise\Model;
+use home\enterprise\Model;
 
-class produto extends Model
+class Produto extends Model
 {
     protected $id;
     protected $descricao;
