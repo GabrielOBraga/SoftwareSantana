@@ -48,7 +48,7 @@ $routes->add('oticaMovel_home',new Routing\Route('/oticaMovel',[
     )
 );
 
-$routes->add('produtos_home',new Routing\Route('/cadastroProdutos',[
+$routes->add('produtos_home',new Routing\Route('/cProdutos',[
             '_controller'=>'home\controller\Controller::produtosAction'
         ]
     )

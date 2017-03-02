@@ -6,7 +6,7 @@
 
 <body>
 Janela do Administrador
-<form action="cFuncionario">
+<form action="cFuncionario" method="get">
     <input type="submit">
 </form>
 

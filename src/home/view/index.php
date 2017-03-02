@@ -53,16 +53,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="front.php/index" title="Home"><form><button>Home</button> </form></a>
+                    <a href="/santana/front.php/index" title="Home"><form><button>Home</button> </form></a>
                 </li>
                 <li>
-                    <a href="front.php/login" title="Login"><form><button>Login</button></form> </a>
+                    <a href="/santana/front.php/login" title="Login"><form><button>Login</button></form> </a>
                 </li>
                 <li>
-                    <a href="front.php/oticaMovel" title="Otica Movel"><form><button>Otica Movel</button></form></a>
+                    <a href="/santana/front.php/oticaMovel" title="Otica Movel"><form><button>Otica Movel</button></form></a>
                 </li>
                 <li>
-                    <a href="front.php/contato" title="Contato"><form><button>Contato</button></form></a>
+                    <a href="/santana/front.php/contato" title="Contato"><form><button>Contato</button></form></a>
                 </li>
             </ul>
         </div>
