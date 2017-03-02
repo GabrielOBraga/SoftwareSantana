@@ -17,8 +17,6 @@ use home\errors\InvalidArgument;
 
 class Controller
 {
-
-    protected  $funcionario;
     protected $newLogin;
     protected  $session;
 
@@ -52,7 +50,7 @@ class Controller
                 $funcionario->setCep($request->request->get('cep'));
                 $funcionario->save();
 
-                $this->session->set('Funcionario', $this->funcionario);
+                $this->session->set('Funcionario', $funcionario);
                 return new RedirectResponse (__DIR__ . '/../view/adm.php');
 
             }
