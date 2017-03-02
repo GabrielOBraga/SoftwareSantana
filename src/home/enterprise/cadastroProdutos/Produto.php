@@ -72,6 +72,6 @@ class Produto extends Model
 
     public static function  getClassName()
     {
-        return 'produto';
+        return 'Produto';
     }
 }

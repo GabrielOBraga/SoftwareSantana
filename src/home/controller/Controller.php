@@ -44,6 +44,7 @@ class Controller
         {
             try {
                 $funcionario = new Funcionarios($request->request->get('name') ,$request->request->get('cpf'),$request->request->get('rua') , '3317-1751');
+                $funcionario->setEmail($request->request->get('email'));
                 $funcionario->save();
 
                 $this->session->set('Funcionario', $this->funcionario);

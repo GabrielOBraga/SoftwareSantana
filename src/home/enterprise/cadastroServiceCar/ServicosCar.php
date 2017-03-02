@@ -75,7 +75,7 @@ class ServicosCar extends Model
 
     public static function getClassName()
     {
-        return 'servicoCar';
+        return 'ServicosCar';
     }
 
     public static function getIdAttribute()

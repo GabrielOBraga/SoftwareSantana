@@ -10,19 +10,24 @@ class Funcionarios extends Model
 {
     protected $nome;
     protected $cpf;
-    private $salario;
-    private $comissao;
-    protected $nVendas;
+
+    protected $dia;
+    protected $mes;
+    protected $ano;
+
     protected $telefone;
     protected $email;
+
+    protected $endereço;
+    protected $cep;
+
+    protected $salario;
+    protected $comissao;
+    protected $nVendas;
 
     public function   __construct(string $nome, string $cpf , string $endereco, string $telefone){
         if($cpf== null || $nome==null || $endereco==null || $telefone==null){
             throw new InvalidArgument("Todos os campos devem ser preenchidos.");
-        }
-
-        if(!self::valida()){
-            throw new InvalidArgument("CPF inválido.");
         }
 
         if(preg_match("[^0-9]",$telefone)==1 || strlen($telefone)<8 || strlen($telefone)>11){
@@ -46,11 +51,6 @@ class Funcionarios extends Model
 
     public function setEmail($email)
     {
-        $dominio=explode('@',$email);
-        if($dominio[1]==null || !checkdnsrr($dominio[1],'A')){
-            throw new InvalidArgument("E-mail inválido.");
-        }
-
         $this->email = $email;
     }
 
@@ -100,6 +100,6 @@ class Funcionarios extends Model
 
     public static function  getClassName()
     {
-        return 'funcionarios';
+        return 'Funcionarios';
     }
 }

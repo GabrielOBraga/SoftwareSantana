@@ -17,7 +17,7 @@ class Model
                 $attribute = $this::getIdAttribute();
                 if ($serial->$attribute == $this->$attribute) {
                     $obj = serialize($this);
-                    return file_put_contents('D:\gabri\Documents\Alessandro\SoftwareSantana\SSantanaArquivos' . $this->getClassName() . '.txt', implode(PHP_EOL, $objects));
+                    return file_put_contents( $this->getClassName() . '.txt', implode(PHP_EOL, $objects));
                 }
             }
         }
