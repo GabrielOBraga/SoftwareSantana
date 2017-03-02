@@ -29,9 +29,9 @@
                     <label>Nascimento: </label>
                 </td>
                 <td align="left">
-                    <input type="text" name="dia" size="2" maxlength="2" value="dd">
-                    <input type="text" name="mes" size="2" maxlength="2" value="mm">
-                    <input type="text" name="ano" size="4" maxlength="4" value="aaaa">
+                    <input type="text" name="dia" size="2" maxlength="2" placeholder="dd">
+                    <input type="text" name="mes" size="2" maxlength="2" placeholder="mm">
+                    <input type="text" name="ano" size="4" maxlength="4" placeholder="aaaa">
                 </td>
             </tr>
             <tr>

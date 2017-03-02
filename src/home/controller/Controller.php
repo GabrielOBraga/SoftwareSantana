@@ -19,6 +19,7 @@ class Controller
 {
 
     protected  $funcionario;
+    protected $newLogin;
     protected  $session;
 
     public function indexAction (Request $request){

@@ -18,7 +18,7 @@ class Funcionarios extends Model
     protected $telefone;
     protected $email;
 
-    protected $endereço;
+    protected $endereco;
     protected $cep;
 
     protected $salario;
@@ -40,15 +40,6 @@ class Funcionarios extends Model
         $this->telefone = $telefone;
     }
 
-    public function getCpf ( ):int
-    {
-        return $this->cpf;
-    }
-
-    public function getNome ( ):string {
-        return $this->nome;
-    }
-
     public function setEmail($email)
     {
         $this->email = $email;
@@ -58,6 +49,61 @@ class Funcionarios extends Model
     {
         $this->salario = $salario;
     }
+
+    public function setComissao(float $comissao)
+    {
+        $this->comissao = $comissao;
+    }
+
+    public function setVendas(int $vendas)
+    {
+        $this->vendas = $vendas;
+    }
+
+    public function setFone(string $fone)
+    {
+        $this->fone = $fone;
+    }
+
+    public function setAno($ano)
+    {
+        $this->ano = $ano;
+    }
+
+    public function setMes($mes)
+    {
+        $this->mes = $mes;
+    }
+
+    public function setDia($dia)
+    {
+        $this->dia = $dia;
+    }
+
+    public function setCep($cep)
+    {
+        $this->cep = $cep;
+    }
+
+    public function setEndereco(string $endereco)
+    {
+        $this->endereco = $endereco;
+    }
+
+    public function setNVendas($nVendas)
+    {
+        $this->nVendas = $nVendas;
+    }
+
+    public function getCpf ( ):int
+    {
+        return $this->cpf;
+    }
+
+    public function getNome ( ):string {
+        return $this->nome;
+    }
+
     public function getSalario():float
     {
         return $this->salario;
@@ -67,27 +113,18 @@ class Funcionarios extends Model
     {
         return $this->comissao;
     }
-    public function setComissao(float $comissao)
-    {
-        $this->comissao = $comissao;
-    }
+
     public function calcularSalario ()
     {
         $this->setSalario($this->getSalario() + $this->nVendas * $this->getComissao());
     }
 
-    public function setVendas(int $vendas)
-    {
-        $this->vendas = $vendas;
-    }
+
     public function resetVendas ()
     {
         $this->vendas = 0;
     }
-    public function setFone(string $fone)
-    {
-        $this->fone = $fone;
-    }
+
     public function getFone():string
     {
         return $this->telefone;
