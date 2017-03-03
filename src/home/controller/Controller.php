@@ -71,7 +71,15 @@ class Controller
     public function admAction (Request $request){
         $this->session = new Session();
         $permission = ['admin' , 'gabriel'];
+        $permission2 = ['igor'];
         $user = $this->session->get('user');
+
+
+        if ( in_array($user,$permission2)){
+            //add flash message
+            return new RedirectResponse('sistema');
+        }
+
         if ( !in_array($user,$permission)){
             //add flash message
             return new RedirectResponse('index');

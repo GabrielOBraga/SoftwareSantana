@@ -10,17 +10,35 @@
 
     <!-- Bootstrap CSS -->
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.3/metisMenu.min.css">
 </head>
 <body>
 
 Janela do Administrador
-<form action="cFuncionario" method="get">
-    <input type="button" class="btn btn-link">
-</form>
+
+<ul class="metismenu" id="menu">
+    <form action="/santana/front.php/cFuncionario" method="get">
+        <button class="btn btn-link">Cadastro de Funcionarios</button>
+    </form>
+
+
+    <form action="/santana/front.php/vendas" method="get">
+        <button class="btn btn-link">Vendas</button>
+    </form>
+
+    <form action="/santana/front.php/cProdutos" method="get">
+        <button class="btn btn-link">Cadastrar Produtos</button>
+    </form>
+</ul>
+
+
+
 
 
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>
 <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.metismenu/2.6.3/metisMenu.min.js"></script>
+
 </body>
 </html>

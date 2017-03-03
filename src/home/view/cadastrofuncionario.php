@@ -17,127 +17,123 @@
 <h1> Formulario de Cadastro de Funcionario - Software Otica Santana</h1>
 <h2> Preencha o formulário abaixo para cadastrar novo Funcionario</h2><br />
 
-<form action="/santana/front.php/cFuncionario" method="POST">
+<form action="/santana/front.php/cFuncionario" method="POST" id="basicBootstrapForm" class="form-horizontal">
 
-    <!-- DADOS PESSOAIS-->
     <fieldset>
-        <legend>Dados Pessoais</legend>
-        <table cellspacing="10">
-            <tr>
-                <td>
-                    <label for="nome">Nome: </label>
-                </td>
-                <td align="left">
-                    <input type="text" name="name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Nascimento: </label>
-                </td>
-                <td align="left">
-                    <input type="text" name="dia" size="2" maxlength="2" placeholder="dd">
-                    <input type="text" name="mes" size="2" maxlength="2" placeholder="mm">
-                    <input type="text" name="ano" size="4" maxlength="4" placeholder="aaaa">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>CPF:</label>
-                </td>
-                <td align="left">
-                    <input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
-                </td>
-            </tr>
-        </table>
+        <legend>Dados do Funcionário</legend>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Nome Completo</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="firstName" placeholder="Primeio Nome" />
+        </div>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="lastName" placeholder="Sobrenome" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">CPF</label>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" name="cpf" placeholder="Ex: 123.456.789-12" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Data de Nascimento</label>
+        <div class="col-xs-1">
+            <input type="number"  maxlength="2" class="form-control" name="dia" placeholder="dd" />
+        </div>
+        <div class="col-xs-1">
+            <input type="number"  maxlength="2" class="form-control" name="mes" placeholder="mm" />
+        </div>
+        <div class="col-xs-1">
+            <input type="number"  maxlength="4" class="form-control" name="ano" placeholder="aaaa" />
+        </div>
+    </div>
     </fieldset>
 
-    <br />
-    <!-- ENDEREÇO -->
     <fieldset>
-        <legend>Dados de Endereço</legend>
-        <table cellspacing="10">
+        <legend>Endereço</legend>
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Rua</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" name="rua" placeholder="Ex: Av. Predo Ludovico" />
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" name="numerorua" placeholder="Ex: 2020" />
+            </div>
+        </div>
 
-            <tr>
-                <td>
-                    <label for="rua">Rua:</label>
-                </td>
-                <td align="left">
-                    <input type="text" name="rua">
-                </td>
-                <td>
-                    <label for="numero">Numero:</label>
-                </td>
-                <td align="left">
-                    <input type="text" name="numero" size="4">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="cep">CEP: </label>
-                </td>
-                <td align="left">
-                    <input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3">
-                </td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label class="col-xs-3 control-label">CEP</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" name="cep" placeholder="Ex: 75.091-125" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Data de Nascimento</label>
+            <div class="col-xs-1">
+                <input type="number"  maxlength="2" class="form-control" name="dia" placeholder="dd" />
+            </div>
+            <div class="col-xs-1">
+                <input type="number"  maxlength="2" class="form-control" name="mes" placeholder="mm" />
+            </div>
+            <div class="col-xs-1">
+                <input type="number"  maxlength="4" class="form-control" name="ano" placeholder="aaaa" />
+            </div>
+        </div>
     </fieldset>
-    <br />
-    <!-- DADOS DE LOGIN -->
+
     <fieldset>
-        <legend>Dados de login</legend>
-        <table cellspacing="10">
-            <tr>
-                <td>
-                    <label for="email">E-mail: </label>
-                </td>
-                <td align="left">
-                    <input type="text" name="email">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="imagem">Imagem de perfil:</label>
-                </td>
-                <td>
-                    <input type="file" name="imagem" >
+    <legend>Dados de login</legend>
 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="login">Login de usuário: </label>
-                </td>
-                <td align="left">
-                    <input type="text" name="login">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="pass">Senha: </label>
-                </td>
-                <td align="left">
-                    <input type="password" name="pass">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="passconfirm">Confirme a senha: </label>
-                </td>
-                <td align="left">
-                    <input type="password" name="passconfirm">
-                </td>
-            </tr>
-        </table>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Username</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Email</label>
+        <div class="col-xs-5">
+            <input type="email" class="form-control" name="email" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Login do Funcionário</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Senha</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Confirme a Senha</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="checkpassword" />
+        </div>
+    </div>
     </fieldset>
-    <br />
-    <input type="submit">
-    <input type="reset" value="Limpar">
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Salvar</button>
+        </div>
+    </div>
 </form>
-
 
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>
 <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>

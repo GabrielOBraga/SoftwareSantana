@@ -44,5 +44,21 @@
 <div id="SANTANA">
     <a href="" style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white; ">Software Ótica Santana - VENDAS</a>
 </div>
+
+<div id="main" class="container-fluid">
+    <h3 class="page-header">Adicionar Item</h3>
+
+    <form action="/santana/front.php/cProdutos" method="POST">
+        <!-- area de campos do form -->
+        <hr />
+        <div id="actions" class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="/santana/front.php/adm" class="btn btn-default">Cancelar</a>
+            </div>
+        </div>
+    </form>
+
+
 </body>
 </html>
