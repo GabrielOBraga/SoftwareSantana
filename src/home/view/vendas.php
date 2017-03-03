@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="img/fav.ico">
     <link rel="icon" href="img/fav.ico">
-    <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../../../web/bootstrap/css/bootstrap.min.css">
 
     <style>
         body {
