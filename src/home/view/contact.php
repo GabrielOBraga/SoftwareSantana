@@ -12,10 +12,11 @@
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
 Janela de Contato
 
-
+</div>
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>
 <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>

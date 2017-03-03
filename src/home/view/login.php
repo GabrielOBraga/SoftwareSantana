@@ -12,15 +12,17 @@
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
-<ul class="nav navbar-nav" align="right">
+<ul class="nav navbar-nav" style="align-items: center">
     <li align="right">
     <form action="/santana/front.php/login" method="POST" >
 
         <div class="container">
             <label><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" required>
-
+        </div>
+        <div class="container">
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
 
@@ -34,7 +36,7 @@
 </form>
     </li>
 </ul>
-
+</div>
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>
 <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>

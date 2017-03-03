@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.3/metisMenu.min.css">
 </head>
 <body>
+<div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
 Janela do Administrador
 
@@ -31,7 +32,7 @@ Janela do Administrador
     </form>
 
 
-
+</div>
 
 
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->

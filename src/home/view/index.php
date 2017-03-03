@@ -12,14 +12,15 @@
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div style="margin: 0 5%; position: relative ; align-items: center ; padding-top: 0">
 
 <!-- /.container -->
-<div class="container" align="middle">
+<div class="container" style="align-items: center  ; position: relative ; padding-top: 5%">
 
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12 text-center">
-                <div id="carousel-example-generic" class="carousel slide">
+    <div class="row" style="margin: 0 5%; width: 90% ;align-items: center ">
+        <div class="box" style="align-items: center ">
+            <div class="col-lg-12 text-center" style="align-items: center">
+                <div id="carousel-example-generic" class="carousel slide" style="align-items: center ">
                     <!-- Indicators -->
                     <ol class="carousel-indicators hidden-xs">
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -28,15 +29,15 @@
                     </ol>
 
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
+                    <div class="carousel-inner"  >
                         <div class="item active">
-                            <img class="img-responsive img-full" src="/santana/img/produto01.jpg"  align="middle"alt="">
+                            <img class="img-responsive img-full" src="/santana/img/produto01.jpg" style="width:auto ;height: 440px">
                         </div>
                         <div class="item">
-                            <img class="img-responsive img-full" src="/santana/img/produto02.jpg" align="middle" >
+                            <img class="img-responsive img-full" src="/santana/img/produto02.jpg" style="width:auto ;height: 440px">
                         </div>
                         <div class="item">
-                            <img class="img-responsive img-full" src="/santana/img/produto03.jpg" align="middle" >
+                            <img class="img-responsive img-full" src="/santana/img/produto03.jpg" style="width:auto ;height: 440px">
                         </div>
                     </div>
 
@@ -58,15 +59,16 @@
                         <strong>Start Bootstrap</strong>
                     </small>
                 </h2>
+
+                Bem vindo a nossa home page!
+
+                Na area de Otica Movel pode se encontrar nosso novo e unico serviço de Otica na porta da sua casa
             </div>
         </div>
     </div>
 </div>
 
-Bem vindo a nossa home page!
-
-Na area de Otica Movel pode se encontrar nosso novo e unico serviço de Otica na porta da sua casa
-
+</div>
 
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>

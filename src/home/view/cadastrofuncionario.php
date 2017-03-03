@@ -13,6 +13,7 @@
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
 <h1> Formulario de Cadastro de Funcionario - Software Otica Santana</h1>
 <h2> Preencha o formulário abaixo para cadastrar novo Funcionario</h2><br />
@@ -131,6 +132,7 @@
         </div>
     </div>
 </form>
+</div>
 
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>

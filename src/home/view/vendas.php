@@ -15,6 +15,7 @@
 </head>
 
 <body>
+<div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
 <h1> Nova Vendas - Software Ótica Santana</h1>
 
@@ -25,16 +26,9 @@
     <form action="/santana/front.php/cProdutos" method="POST">
         <!-- area de campos do form -->
 
-        <select class="selector">
-            <?php foreach($_SESSION->$produto as $produto){
-                $a = $a."<option vaule='volvo'>Volvo</option>";
-            } ?>
-            <option value="volvo">Volvo</option>
-        </select>
-
 
         <div id="actions" class="row">
-
+            <div>
                 <button type="submit" class="btn btn-primary">Salvar</button>
                 <a href="/santana/front.php/adm" class="btn btn-default">Cancelar</a>
             </div>
@@ -42,6 +36,7 @@
         </div>
 
     </form>
+</div>
 
     <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
     <script src="../../santana/bootstrap/js/jquery.js"></script>

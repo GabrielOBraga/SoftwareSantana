@@ -16,6 +16,9 @@
 
 </head>
 <body>
+
+<div style=" margin: 5% 12.5%; position: relative; top:0 ">
+
 <h1> Cadastro de produtos - Software Ótica Santana</h1>
 <h2> Preencha o formulário abaixo com os dados do novo produto:</h2><br />
 
@@ -99,7 +102,7 @@
 
     </form>
 
-
+</div>
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>
 <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>

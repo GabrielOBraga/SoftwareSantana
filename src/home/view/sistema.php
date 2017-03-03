@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../santana/bootstrap/css/style.css">
 </head>
 <body>
+<div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
 <form action="/santana/front.php/vendas" method="get">
     <button class="btn btn-link">Vendas</button>
@@ -23,7 +24,7 @@
 <form action="/santana/front.php/cProdutos" method="get">
     <button class="btn btn-link">Cadastrar Produtos</button>
 </form>
-
+</div>
 
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>

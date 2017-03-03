@@ -11,9 +11,12 @@
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../santana/bootstrap/css/style.css" rel="stylesheet">
 </head>
-<body>
+<body background="../../santana/img/fundosantana.png" style="background-size: 100%">
+
+<div style="width: 80%; height: 100%; background-color: #FFFFFF; margin: 0 10%; position: absolute; top:0">
 
 <!-- Navigation -->
+
 <nav class="navbar navbar-default" role="navigation" align="middle" >
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,7 +52,7 @@
 
 </nav>
 </nav>
-
+</div>
 <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
 <script src="../../santana/bootstrap/js/jquery.js"></script>
 <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
