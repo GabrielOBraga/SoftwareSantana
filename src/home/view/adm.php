@@ -16,7 +16,7 @@
 
 Janela do Administrador
 
-<ul class="metismenu" id="menu">
+
     <form action="/santana/front.php/cFuncionario" method="get">
         <button class="btn btn-link">Cadastro de Funcionarios</button>
     </form>
@@ -29,7 +29,6 @@ Janela do Administrador
     <form action="/santana/front.php/cProdutos" method="get">
         <button class="btn btn-link">Cadastrar Produtos</button>
     </form>
-</ul>
 
 
 

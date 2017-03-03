@@ -19,6 +19,7 @@ class Controller
 {
     protected $newLogin;
     protected  $session;
+    protected $produtos;
 
     public function indexAction (Request $request){
         $this->session= new Session();
@@ -158,10 +159,10 @@ class Controller
 
     public function vendasAction (Request $request)
     {
-
         $permission = ['gabriel','igor','adm'];
         $this->session= new Session();
         $user = $this->session->get('user');
+
         if ( !in_array($user,$permission)){
             //add flash message
             return new RedirectResponse('index');

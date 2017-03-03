@@ -127,6 +127,7 @@
     <div class="form-group">
         <div class="col-xs-9 col-xs-offset-3">
             <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Salvar</button>
+            <a href="/santana/front.php/adm" class="btn btn-default">Cancelar</a>
         </div>
     </div>
 </form>

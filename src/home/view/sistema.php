@@ -10,14 +10,18 @@
 
     <!-- Bootstrap CSS -->
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../santana/bootstrap/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="../../santana/bootstrap/css/jquery.fileupload-ui.css">
+    <link rel="stylesheet" href="../../santana/bootstrap/css/style.css">
 </head>
 <body>
 
-<form action="/santana/front.php/vendas" method="POST">
+<form action="/santana/front.php/vendas" method="get">
+    <button class="btn btn-link">Vendas</button>
+</form>
 
-    <div class="container">
-        <button type="submit">Vendas</button>
-    </div>
+<form action="/santana/front.php/cProdutos" method="get">
+    <button class="btn btn-link">Cadastrar Produtos</button>
 </form>
 
 
