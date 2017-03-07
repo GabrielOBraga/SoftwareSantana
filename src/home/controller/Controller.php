@@ -103,6 +103,9 @@ class Controller
         }
 
         if ( $request->getMethod()=='POST'){
+            $produto = new Produto($request->request->get('') , $request->request->get(''));
+            $produto->setId();
+
         }
         ob_start();
         include sprintf(__DIR__ . '/../view/produtos.php');

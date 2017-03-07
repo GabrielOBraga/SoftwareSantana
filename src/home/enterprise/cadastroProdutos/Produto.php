@@ -3,30 +3,27 @@
 declare (strict_types=1);
 namespace home\enterprise\cadastroProdutos;
 
-
 use home\enterprise\Model;
+use home\errors\InvalidArgument;
 
 class Produto extends Model
 {
-    protected $id;
+    protected $ref;
     protected $descricao;
     protected $valor;
     protected $quantidade;
 
-    function __construct(string $descricao,float $valor)
+    function __construct(string $descricao,string $referencia ,float $valor)
     {
+        if ($valor == 0 || $valor || preg_match("[^0-9]",$valor)==2)
+        {
+            throw new InvalidArgument("terceiro Argumento - Valor Invalido");
+        }
+
         $this->descricao = $descricao;
+        $this->ref = $referencia;
         $this->valor = $valor;
         $this->quantidade = 0;
-        $this->id = ("Adicionar um contatos de id");
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): string
-    {
-        return $this->id;
     }
 
     /**
@@ -37,13 +34,6 @@ class Produto extends Model
         return $this->descricao;
     }
 
-    /**
-     * @param string $id
-     */
-    public function setId(string $id)
-    {
-        $this->id = $id;
-    }
     /**
      * @return mixed
      */
@@ -57,20 +47,19 @@ class Produto extends Model
      */
     public function addQuantidade(int $quantidade)
     {
+        if ($quantidade < $this->quantidade){
+            throw new InvalidArgument("Quantidade Vendida Menor que Estoque");
+        }
         $this->quantidade = $quantidade + $this->quantidade;
     }
 
-    public function subQuantidade(int $quantidade)
+
+    public function getIdAttribute()
     {
-        $this->quantidade = $quantidade - $this->quantidade;
+        return 'ref';
     }
 
-    public static function getIdAttribute()
-    {
-        return 'id';
-    }
-
-    public static function  getClassName()
+    public function  getClassName()
     {
         return 'Produto';
     }
