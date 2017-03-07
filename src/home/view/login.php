@@ -30,10 +30,16 @@
         </div>
 
         <div class="container">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
+
     </div>
 </form>
+        <div>
+        <form action="/santana/front.php/index" method="get">
+
+            <button type="submit">Cancel</button>
+
+        </form>
+        </div>
     </li>
 </ul>
 </div>

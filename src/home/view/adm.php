@@ -11,11 +11,14 @@
     <!-- Bootstrap CSS -->
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.3/metisMenu.min.css">
+    <link rel="stylesheet" href="https//cdn.jsdelivr.net/jquery.metismenu/2.6.3/metisMenu.min.css">
+
 </head>
 <body>
 <div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
 Janela do Administrador
+
 
 
     <form action="/santana/front.php/cFuncionario" method="get">
@@ -39,6 +42,7 @@ Janela do Administrador
 <script src="../../santana/bootstrap/js/jquery.js"></script>
 <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
 <script src="//cdn.jsdelivr.net/jquery.metismenu/2.6.3/metisMenu.min.js"></script>
+
 
 </body>
 </html>

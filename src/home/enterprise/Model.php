@@ -8,25 +8,27 @@ class Model
 {
     public function  save():int
     {
-        $contents=@file_get_contents(self::getClassName().'.txt');
+        $filepath = __DIR__.'/files/'. $this->getClassName().'.txt';
+
+        $contents=@file_get_contents($filepath);
         if (!($contents===FALSE)) {
             $objects = explode(PHP_EOL, $contents);
             foreach ($objects as &$obj) {
                 if (!$obj)  break;
                 $serial = unserialize($obj);
-                $attribute = $this::getIdAttribute();
+                $attribute = $this->getIdAttribute();
                 if ($serial->$attribute == $this->$attribute) {
                     $obj = serialize($this);
-                    return file_put_contents( $this->getClassName() . '.txt', implode(PHP_EOL, $objects));
+                    return file_put_contents(__DIR__.'/files/'. $this->getClassName() . '.txt', implode(PHP_EOL, $objects));
                 }
             }
         }
-        return file_put_contents($this->getClassName().'.txt',serialize($this).PHP_EOL,FILE_APPEND);
+        return file_put_contents(__DIR__.'/files/'. $this->getClassName().'.txt',serialize($this).PHP_EOL,FILE_APPEND);
     }
 
     public static function  load(int $id)
     {
-        $contents=@file_get_contents(self::getClassName().'.txt');
+        $contents=@file_get_contents(__DIR__.'/files/'. self::getClassName().'.txt');
         $objects=explode(PHP_EOL,$contents);
         foreach ($objects as $obj){
             if (!$obj)  break;
@@ -41,18 +43,18 @@ class Model
 
     public function delete()
     {
-        $contents=file_get_contents(self::getClassName().'.txt');
+        $contents=file_get_contents(__DIR__.'/files/'. $this->getClassName().'.txt');
         $contents=str_replace(serialize($this).PHP_EOL,'',$contents);
         file_put_contents($this->getClassName().'.txt',$contents) ;
     }
 
-    public static function getIdAttribute()
+    public function getIdAttribute()
     {
-        return self::getIdAttribute();
+        return $this->getIdAttribute();
     }
-    public static function  getClassName()
+    public function  getClassName()
     {
-        return self::getClassName();
+        return $this->getClassName();
     }
 
 }

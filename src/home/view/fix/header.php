@@ -13,7 +13,7 @@
 </head>
 <body background="../../santana/img/fundosantana.png" style="background-size: 100%">
 
-<div style="width: 80%; height: 100%; background-color: #FFFFFF; margin: 0 10%; position: absolute; top:0">
+<div style="width: 80%; height: 1100px; background-color: #FFFFFF; margin: 0 10%; position: absolute; top:0">
 
 <!-- Navigation -->
 

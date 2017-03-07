@@ -43,11 +43,9 @@ class Controller
         if ( $request->getMethod()=='POST')
         {
             try {
-                $funcionario = new Funcionarios($request->request->get('name') ,$request->request->get('cpf'),$request->request->get('rua') , '3317-1751');
+                $funcionario = new Funcionarios($request->request->get('firstName') ,$request->request->get('cpf'),$request->request->get('rua') , '3317-1751');
                 $funcionario->setEmail($request->request->get('email'));
-                $funcionario->setDia($request->request->get('dia'));
-                $funcionario->setMes($request->request->get('mes'));
-                $funcionario->setAno($request->request->get('ano'));
+                $funcionario->setNascimento($request->request->get('ano'));
                 $funcionario->setCep($request->request->get('cep'));
                 $funcionario->save();
 

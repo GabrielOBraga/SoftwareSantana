@@ -11,9 +11,7 @@ class Funcionarios extends Model
     protected $nome;
     protected $cpf;
 
-    protected $dia;
-    protected $mes;
-    protected $ano;
+    protected $dataNascimento;
 
     protected $telefone;
     protected $email;
@@ -65,19 +63,9 @@ class Funcionarios extends Model
         $this->fone = $fone;
     }
 
-    public function setAno($ano)
+    public function setNascimento(string $nascimento)
     {
-        $this->ano = $ano;
-    }
-
-    public function setMes($mes)
-    {
-        $this->mes = $mes;
-    }
-
-    public function setDia($dia)
-    {
-        $this->dia = $dia;
+        $this->dataNascimento = $nascimento;
     }
 
     public function setCep($cep)
@@ -130,12 +118,12 @@ class Funcionarios extends Model
         return $this->telefone;
     }
 
-    public static function getIdAttribute()
+    public function getIdAttribute()
     {
         return 'cpf';
     }
 
-    public static function  getClassName()
+    public function  getClassName()
     {
         return 'Funcionarios';
     }

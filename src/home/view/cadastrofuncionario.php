@@ -71,19 +71,6 @@
                 <input type="text" class="form-control" name="cep" placeholder="Ex: 75.091-125" />
             </div>
         </div>
-
-        <div class="form-group">
-            <label class="col-xs-3 control-label">Data de Nascimento</label>
-            <div class="col-xs-1">
-                <input type="number"  maxlength="2" class="form-control" name="dia" placeholder="dd" />
-            </div>
-            <div class="col-xs-1">
-                <input type="number"  maxlength="2" class="form-control" name="mes" placeholder="mm" />
-            </div>
-            <div class="col-xs-1">
-                <input type="number"  maxlength="4" class="form-control" name="ano" placeholder="aaaa" />
-            </div>
-        </div>
     </fieldset>
 
     <fieldset>
