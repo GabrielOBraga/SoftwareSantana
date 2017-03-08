@@ -17,7 +17,8 @@
 
 <h1> Formulario de Cadastro de Funcionario - Software Otica Santana</h1>
 <h2> Preencha o formulário abaixo para cadastrar novo Funcionario</h2><br />
-
+    <h3><?=$error?></h3>
+    <br>
 <form action="/santana/front.php/cFuncionario" method="POST" id="basicBootstrapForm" class="form-horizontal">
 
     <fieldset>

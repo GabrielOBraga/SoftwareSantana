@@ -36,6 +36,12 @@ $routes->add('index_home',new Routing\Route('/index',[
     )
 );
 
+$routes->add('localizacao_home',new Routing\Route('/localizacao',[
+            '_controller'=>'home\controller\Controller::localizacaoAction'
+        ]
+    )
+);
+
 $routes->add('login_home',new Routing\Route('/login',[
             '_controller'=>'home\controller\Controller::loginAction'
         ]

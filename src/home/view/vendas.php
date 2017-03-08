@@ -25,7 +25,11 @@
 
     <form action="/santana/front.php/cProdutos" method="POST">
         <!-- area de campos do form -->
-
+        Selecione o Produto:
+        <select name="produto">
+            <option value=<?=$request->request->get('Produto')?>><?=$request->request->get('descricao')?></option>
+            <option value=<?=$request->request->get('Produto')?>><?=$request->request->get('descricao')?></option>
+        </select>
 
         <div id="actions" class="row">
             <div>

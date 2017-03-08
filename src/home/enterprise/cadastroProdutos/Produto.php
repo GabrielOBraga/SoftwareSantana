@@ -15,9 +15,14 @@ class Produto extends Model
 
     function __construct(string $descricao,string $referencia ,float $valor)
     {
-        if ($valor == 0 || $valor || preg_match("[^0-9]",$valor)==2)
+
+        if($descricao== null || $referencia==null || $valor==null){
+            throw new InvalidArgument("Todos os campos devem ser preenchidos.");
+        }
+
+        if ($valor == 0 || preg_match("[^0-9]",$valor)==2)
         {
-            throw new InvalidArgument("terceiro Argumento - Valor Invalido");
+            throw new InvalidArgument("Valor Invalido");
         }
 
         $this->descricao = $descricao;

@@ -51,7 +51,6 @@ class Controller
 
                 $this->session->set('Funcionario', $funcionario);
                 return new RedirectResponse (__DIR__ . '/../view/adm.php');
-
             }
             catch ( InvalidArgument $e){
                 $error=$e->getMessage();
@@ -103,10 +102,17 @@ class Controller
         }
 
         if ( $request->getMethod()=='POST'){
-            $produto = new Produto($request->request->get('') , $request->request->get(''));
-            $produto->setId();
-
-        }
+            try{
+                $produto = new Produto($request->request->get('descricao') , $request->request->get('ref') , $request->request->get('valor'));
+                $produto->save();
+            }
+            catch ( InvalidArgument $e){
+                $error=$e->getMessage();
+            }
+            catch ( \Throwable $e ){
+                $error= 'Erro dados nao informados corretamente';
+            }
+                    }
         ob_start();
         include sprintf(__DIR__ . '/../view/produtos.php');
         return new Response( ob_get_clean());
@@ -126,6 +132,34 @@ class Controller
         return new Response( ob_get_clean());
 
     }
+
+    public function localizacaoAction (Request $request){
+
+        $permission = [''];
+        $this->session= new Session();
+        $user = $this->session->get('user');
+
+        if ( $request->getMethod()=='POST'){
+            try{
+                $cliente = new ServicosCar($request->request->get('name') , $request->request->get('email') , $request->request->get('telefone'));
+                $cliente->setLocalizacao($request->request->get('posX') , $request->request->get('posY'));
+                $cliente->setEndereço($request->request->get('endereco'));
+                $cliente->save();
+            }
+            catch ( InvalidArgument $e){
+                $error=$e->getMessage();
+            }
+            catch ( \Throwable $e ){
+                $error= 'Erro dados nao informados corretamente';
+            }
+
+        }
+        ob_start();
+        include sprintf(__DIR__ . '/../view/oticaMovel.php');
+        return new Response( ob_get_clean());
+
+    }
+
 
     public function sistemaAction (Request $request){
         $this->session= new Session();
@@ -151,6 +185,14 @@ class Controller
         $user = $this->session->get('user');
 
         if ( $request->getMethod()=='POST'){
+            try{
+            }
+            catch ( InvalidArgument $e){
+                $error=$e->getMessage();
+            }
+            catch ( \Throwable $e ){
+                $error= 'Erro dados nao informados corretamente';
+            }
         }
         ob_start();
         include sprintf(__DIR__ . '/../view/contact.php');
@@ -170,6 +212,14 @@ class Controller
         }
 
         if ( $request->getMethod()=='POST'){
+            try{
+            }
+            catch ( InvalidArgument $e){
+                $error=$e->getMessage();
+            }
+            catch ( \Throwable $e ){
+                $error= 'Erro dados nao informados corretamente';
+            }
         }
         ob_start();
         include sprintf(__DIR__ . '/../view/vendas.php');

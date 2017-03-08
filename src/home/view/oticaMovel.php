@@ -6,20 +6,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <!-- Bootstrap CSS -->
     <link href="../../santana/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div style=" margin: 5% 12.5%; position: relative; top:0 ">
 
-Otica Movel
+<h1>Otica Movel</h1>
+
+    <form action="/santana/front.php/localizacao" method="POST">
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <button class="btn btn-button">Otica Movel</button>
+    </form>
+
 </div>
+    <script src="../../santana/bootstrap/js/jquery.js"></script>
+    <script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
 
-
-<!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
-<script src="../../santana/bootstrap/js/jquery.js"></script>
-<script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -4,17 +4,27 @@ declare (strict_types=1);
 namespace home\enterprise\cadastroServiceCar;
 
 use home\enterprise\Model;
+use home\errors\InvalidArgument;
 
 class ServicosCar extends Model
 {
     protected $name;
     protected $email;
     protected $fone;
-    protected $localizacao;
+    protected $posX;
+    protected $posY;
     protected $endereco;
 
     function __construct(string $name , string $email , string $fone)
     {
+        if($name== null || $email==null || $fone==null){
+            throw new InvalidArgument("Todos os campos devem ser preenchidos.");
+        }
+
+        if ( preg_match("/[^a-zA-Z]/'[ ]'/",$name) == 1){
+            throw new InvalidArgument("$name, No Nome deve conter apenas letras");
+        }
+
 
         $this->name = $name;
         $this->email = $email;
@@ -24,9 +34,10 @@ class ServicosCar extends Model
     /**
      * @param mixed $localizacao
      */
-    public function setLocalizacao(double $localizacao)
+    public function setLocalizacao(double $posX , double $posY):array
     {
-        $this->localizacao = $localizacao;
+        $localizacao = [$posX , $posY];
+        return $localizacao;
     }
 
     public function setEndereço(string $endereco)
