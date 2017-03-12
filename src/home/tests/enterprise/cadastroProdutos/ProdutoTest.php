@@ -12,11 +12,9 @@ use home\enterprise\cadastroProdutos\Produto;
 class ProdutoTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test if the constructor's descricao is stored correctly
      * @param string $descricao
      * @param string $referencia
-     * @param string $valor
-     * @dataProvider  providerTestConstructorValidDescricao
+     * @param float $valor
      */
     public function testConstructorValidDescricao (string $descricao ,string $referencia ,float $valor)
     {
@@ -28,7 +26,6 @@ class ProdutoTest extends \PHPUnit_Framework_TestCase
      * Test if the constructor's descricao is stored correctly
      * @param string $descricao
      * @param string $referencia
-     * @param string $valor
      * @dataProvider  providerTestConstructorInvalidDescricao
      */
     public function testConstructorInvalidDescricao(string $descricao ,string $referencia ,float $valor)

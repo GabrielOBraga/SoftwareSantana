@@ -66,7 +66,6 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
         $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
     }
 
-
     /**
      * Test if the constructor's endereco is stored correctly
      * @param string $name
@@ -132,8 +131,8 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
 
     public function providerTestConstructorValidName (){
         return [
-            ['Igor','','',''],
-            ['Gabriel','','','']
+            ['Igor Tadayuki Hangui Silva','','',''],
+            ['Gabriel Oliveira Braga','','','']
         ] ;
     }
 
@@ -145,21 +144,28 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     }
     public function providerTestConstructorValidCpf (){
         return [
-            ['Igor','','',''],
+            ['Igor','703.937.781-00','',''],
+            ['Igor','33160667480','',''],
             ['Gabriel','','','']
-        ] ;
+        ];
     }
 
     public function providerTestConstructorInvalidCpf (){
         return [
-            ['Igor','','',''],
+            ['Igor','111.111.111-11','',''],
+            ['Igor','222.222.222-22','',''],
+            ['Igor','333.333.333-33','',''],
+            ['Igor','444.444.444-44','',''],
+            ['Igor','222.222.222.222-00','',''],
+            ['Igor','2222222200','',''],
+            ['Igor','00000000000000000000000000','',''],
             ['Gabriel','','','']
         ] ;
     }
 
     public function providerTestConstructorValidEndereco (){
         return [
-            ['Igor','','',''],
+            ['Igor','','Av. Visconde Taunay',''],
             ['Gabriel','','','']
         ] ;
     }
