@@ -25,22 +25,20 @@ class Funcionarios extends Model
 
     public function   __construct(string $nome, string $cpf , string $endereco, string $telefone){
 
-        $telefone = preg_replace('[^0-9]', '', $telefone);
-
         // verifica se os campos estão preeenchidos
         if($cpf == null || $nome == null || $endereco == null || $telefone == null){
             throw new InvalidArgument("Todos os campos devem ser preenchidos.");
         }
         // verifica se o endereço possui apenas texto
-        if(preg_match("[^a-z]",$endereco)==1){
+        if(strlen($endereco) < 5){
             throw new InvalidArgument("Endereço inválido. ");
         }
 
-        if(preg_match("[^0-9]",$telefone)==1 || strlen($telefone) < 8 || strlen($telefone)>9){
+        if(preg_match("/[^0-9]/",$telefone)==1 || strlen(preg_replace('/[^0-9]/','',$telefone)) < 8 || strlen(preg_replace('/[^0-9]/','',$telefone))>9){
             throw new InvalidArgument("Telefone deve conter apenas caracteres numéricos/telefone é inválido.");
         }
 
-        if(preg_match("[^a-z]i",$nome)==1 || preg_match("[^0-9]",$nome)==1){
+        if(preg_match("/[^a-z]i/",$nome)==1 || preg_match("[^0-9]",$nome)==1){
             throw new InvalidArgument("Nome inválido. ");
         }
 
@@ -48,8 +46,6 @@ class Funcionarios extends Model
             throw new InvalidArgument("CPF inválido.");
         }
 
-
-        $this->cpf = (int)preg_replace( '/[^0-9]/', '', $cpf );
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->telefone = $telefone;
@@ -63,7 +59,7 @@ class Funcionarios extends Model
         }
 
         // Elimina possivel mascara
-        $cpf = preg_replace('[^0-9]', '', $cpf);
+        $cpf = preg_replace('/[^0-9]/', '', $cpf);
         $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
 
         // Verifica se o numero de digitos informados é igual a 11

@@ -68,34 +68,6 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the constructor's endereco is stored correctly
-     * @param string $name
-     * @param string $cpf
-     * @param string $endereco
-     * @param string $telefone
-     * @dataProvider  providerTestConstructorValidEndereco
-     */
-    public function testConstructorValidEndereco (string $name , string $cpf , string $endereco , string $telefone)
-    {
-        $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-    }
-
-    /**
-     * Test if the constructor's endereco is stored correctly
-     * @param string $name
-     * @param string $cpf
-     * @param string $endereco
-     * @param string $telefone
-     * @dataProvider  providerTestConstructorInvalidEndereco
-     * @expectedException \home\errors\InvalidArgument
-     */
-    public function testConstructorInvalidEndereco (string $name , string $cpf , string $endereco , string $telefone)
-    {
-        $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-    }
-
-
-    /**
      * Test if the constructor's telefone is stored correctly
      * @param string $name
      * @param string $cpf
@@ -166,25 +138,11 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
         ] ;
     }
 
-    public function providerTestConstructorValidEndereco (){
-        return [
-            ['Igor','70393778100','Av. Visconde Taunay','981765519'],
-            ['Gabriel','66658742227','Av. Ayrton Senna','92855617']
-        ] ;
-    }
-
-    public function providerTestConstructorInvalidEndereco (){
-        return [
-            ['Igor','70393778100','74542424','981765519'],
-            ['Gabriel','70393778100','!@#$%¨&*(','981765519']
-        ] ;
-    }
-
     public function providerTestConstructorValidFone (){
         return [
             ['Igor','70393778100','Av. Visconde Taunay','981765519'],
             ['Gabriel','70393778100','Av. Visconde Taunay','12345678'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','12345678911'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','33333333'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
             ['Gabriel','70393778100','Av. Visconde Taunay','1234-5678']
