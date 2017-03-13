@@ -94,35 +94,6 @@ class ProdutoTest extends \PHPUnit_Framework_TestCase
         return $method->invokeArgs($object, $parameters);
     }
 
-    public function providerTestConstructorValidName (){
-        return [
-            ['Oculos','2345','5.5'],
-            ['Oculos de Led','','5.5']
-        ] ;
-    }
-
-    public function providerTestConstructorInvalidName (){
-        return [
-            ['Oculos @301-43','','5.5'],
-            ['a s f t b f','','5.5']
-        ] ;
-    }
-
-
-    public function providerTestConstructorValidReferencia (){
-        return [
-            ['Oculos','2345','5.5'],
-            ['Oculos de Led','','5.5']
-        ] ;
-    }
-
-    public function providerTestConstructorInvalidReferencia (){
-        return [
-            ['Oculos @301-43','','5.5'],
-            ['a s f t b f','','5.5']
-        ] ;
-    }
-
 
     public function providerTestConstructorValidValor (){
         return [
