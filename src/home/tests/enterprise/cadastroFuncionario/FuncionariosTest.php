@@ -22,7 +22,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstructorValidName (string $name , string $cpf , string $endereco , string $telefone)
     {
-        $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
+        $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone);
         $this->assertEquals($funcObj1->getNome(),$name);
     }
 
@@ -33,6 +33,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $endereco
      * @param string $telefone
      * @dataProvider  providerTestConstructorInvalidName
+     * @expectedException \home\errors\InvalidArgument
      */
     public function testConstructorInvalidName (string $name , string $cpf , string $endereco , string $telefone)
     {
@@ -45,12 +46,11 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $cpf
      * @param string $endereco
      * @param string $telefone
-     * @dataProvider  providerTestConstructorValidCpf
+     * @dataProvider  providerTestValidCpf
      */
-    public function testConstructorValidCpf (string $name , string $cpf , string $endereco , string $telefone)
+    public function testValidCpf (string $name , string $cpf , string $endereco , string $telefone)
     {
         $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-        $this->assertEquals($funcObj1->getCpf(),$cpf);
     }
 
     /**
@@ -59,11 +59,12 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $cpf
      * @param string $endereco
      * @param string $telefone
-     * @dataProvider  providerTestConstructorInvalidCpf
+     * @dataProvider  providerTestInvalidCpf
+     * @expectedException \home\errors\InvalidArgument
      */
-    public function testConstructorInvalidCpf (string $name , string $cpf , string $endereco , string $telefone)
+    public function testInvalidCpf (string $name, string $cpf, string $endereco, string $telefone)
     {
-        $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
+        $funcObj1 = new Funcionarios($name, $cpf, $endereco, $telefone);
     }
 
     /**
@@ -77,7 +78,6 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     public function testConstructorValidEndereco (string $name , string $cpf , string $endereco , string $telefone)
     {
         $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-        $this->assertEquals($funcObj1->getEndereço,$endereco);
     }
 
     /**
@@ -87,6 +87,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $endereco
      * @param string $telefone
      * @dataProvider  providerTestConstructorInvalidEndereco
+     * @expectedException \home\errors\InvalidArgument
      */
     public function testConstructorInvalidEndereco (string $name , string $cpf , string $endereco , string $telefone)
     {
@@ -115,6 +116,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $endereco
      * @param string $telefone
      * @dataProvider  providerTestConstructorInvalidFone
+     * @expectedException \home\errors\InvalidArgument
      */
     public function testConstructorInvalidFone (string $name , string $cpf , string $endereco , string $telefone)
     {
@@ -131,72 +133,75 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
 
     public function providerTestConstructorValidName (){
         return [
-            ['Igor Tadayuki Hangui Silva','70393778100','Rua     ','6281765519'],
-            ['Gabriel Oliveira Braga','66658742227','Av.      ','62 9 92855617']
+            ['Igor Tadayuki Hangui Silva','70393778100','Rua     ','81765519'],
+            ['Gabriel Oliveira Braga','66658742227','Av.      ','92855617']
         ] ;
     }
 
     public function providerTestConstructorInvalidName (){
         return [
-            ['Igor Tadayuki 434Hangui Silva','70393778100','Rua     ','6281765519'],
-            ['Gabriel Olive3545ira Braga','66658742227','Av.      ','62 9 92855617']
+            ['Igor Tadayuki 434Hangui Silva','70393778100','Rua     ','81765519'],
+            ['Gabriel Olive3545ira Braga','66658742227','Av.      ','92855617']
         ] ;
     }
-    public function providerTestConstructorValidCpf (){
+    public function providerTestValidCpf (){
         return [
-            ['Igor','703.937.781-00','Rua     ','6281765519'],
-            ['Igor','33160667480','Av.      ','62 9 92855617'],
-            ['Gabriel Oliveira Braga','66658742227','Av.      ','62 9 92855617']
+            ['Igor','703.937.781-00','Rua     ','81765519'],
+            ['Igor','33160667480','Av.      ','92855617'],
+            ['Gabriel Oliveira Braga','66658742227','Av.      ','92855617']
         ];
     }
 
-    public function providerTestConstructorInvalidCpf (){
+    public function providerTestInvalidCpf (){
         return [
-            ['Igor','111.111.111-11','Rua     ','6281765519'],
-            ['Igor','222.222.222-22','Rua     ','6281765519'],
-            ['Igor','333.333.333-33','Rua     ','6281765519'],
-            ['Igor','444.444.444-44','Rua     ','6281765519'],
-            ['Igor','222.222.222.222-00','Rua     ','6281765519'],
-            ['Igor','2222222200','Rua     ','6281765519'],
-            ['Igor','00000000000000000000000000','Rua     ','6281765519'],
-            ['Gabriel','12345679885752','Rua     ','6281765519'],
-            ['Gabriel','12345678901','Rua     ','6281765519']
+            ['Igor','111.111.111-11','Rua     ','81765519'],
+            ['Igor','222.222.222-22','Rua     ','81765519'],
+            ['Igor','333.333.333-33','Rua     ','81765519'],
+            ['Igor','444.444.444-44','Rua     ','81765519'],
+            ['Igor','222.222.222.222-00','Rua     ','81765519'],
+            ['Igor','2222222200','Rua     ','81765519'],
+            ['Igor','00000000000000000000000000','Rua     ','81765519'],
+            ['Gabriel','12345679885752','Rua     ','81765519'],
+            ['Gabriel','12345678901','Rua     ','81765519']
         ] ;
     }
 
     public function providerTestConstructorValidEndereco (){
         return [
-            ['Igor','70393778100','Av. Visconde Taunay','62981765519'],
-            ['Gabriel','66658742227','Av. Ayrton Senna','62 9 92855617']
+            ['Igor','70393778100','Av. Visconde Taunay','981765519'],
+            ['Gabriel','66658742227','Av. Ayrton Senna','92855617']
         ] ;
     }
 
     public function providerTestConstructorInvalidEndereco (){
         return [
-            ['Igor','','',''],
-            ['Gabriel','','','']
+            ['Igor','70393778100','74542424','981765519'],
+            ['Gabriel','70393778100','!@#$%¨&*(','981765519']
         ] ;
     }
 
     public function providerTestConstructorValidFone (){
         return [
-            ['Igor','','',''],
-            ['Gabriel','','','12345678'],
-            ['Gabriel','','','12345678911'],
-            ['Gabriel','','','(12)3 4567-8911'],
-            ['Gabriel','','','1234-5678']
+            ['Igor','70393778100','Av. Visconde Taunay','981765519'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','12345678'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','12345678911'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','1234-5678']
         ] ;
     }
 
     public function providerTestConstructorInvalidFone (){
         return [
-            ['Igor','','',''],
-            ['Gabriel','','','1234567891112'],
-            ['Gabriel','','','(12)3 4567-89119'],
-            ['Gabriel','','','(12)3 4567-8'],
-            ['Gabriel','','','12345678'],
-            ['Gabriel','','','123456'],
-            ['Gabriel','','','12'],
+            ['Igor','70393778100','Av. Visconde Taunay',''],
+            ['Gabriel','70393778100','Av. Visconde Taunay','1234567891112'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4567-89119'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4567-89119'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4567-8'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4567-8'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','1234567'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','123456'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','12'],
         ] ;
     }
 
