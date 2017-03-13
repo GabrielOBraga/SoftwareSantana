@@ -17,7 +17,13 @@
 
 <h1> Formulario de Cadastro de Funcionario - Software Otica Santana</h1>
 <h2> Preencha o formulário abaixo para cadastrar novo Funcionario</h2><br />
-    <h3><?=$error?></h3>
+    <?php
+        foreach ($this->session->getFlashBag()->all() as $type => $messages) {
+            foreach ($messages as $message) {
+                echo '<div class="alert alert-'.$type.'">'.$message.'</div>';
+            }
+        }
+        ?>
     <br>
 <form action="/santana/front.php/cFuncionario" method="POST" id="basicBootstrapForm" class="form-horizontal">
 
@@ -42,16 +48,24 @@
 
     <div class="form-group">
         <label class="col-xs-3 control-label">Data de Nascimento</label>
-        <div class="col-xs-1">
+        <div class="col-xs-2">
             <input type="number"  maxlength="2" class="form-control" name="dia" placeholder="dd" />
         </div>
-        <div class="col-xs-1">
+        <div class="col-xs-2">
             <input type="number"  maxlength="2" class="form-control" name="mes" placeholder="mm" />
         </div>
-        <div class="col-xs-1">
+        <div class="col-xs-2">
             <input type="number"  maxlength="4" class="form-control" name="ano" placeholder="aaaa" />
         </div>
     </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Telefone</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" name="telefone" placeholder="Ex: 62 3317 - 1751" />
+            </div>
+        </div>
+
     </fieldset>
 
     <fieldset>
