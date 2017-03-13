@@ -131,42 +131,43 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
 
     public function providerTestConstructorValidName (){
         return [
-            ['Igor Tadayuki Hangui Silva','','',''],
-            ['Gabriel Oliveira Braga','','','']
+            ['Igor Tadayuki Hangui Silva','70393778100','Rua     ','6281765519'],
+            ['Gabriel Oliveira Braga','66658742227','Av.      ','62 9 92855617']
         ] ;
     }
 
     public function providerTestConstructorInvalidName (){
         return [
-            ['Igor','','',''],
-            ['Gabriel','','','']
+            ['Igor Tadayuki 434Hangui Silva','70393778100','Rua     ','6281765519'],
+            ['Gabriel Olive3545ira Braga','66658742227','Av.      ','62 9 92855617']
         ] ;
     }
     public function providerTestConstructorValidCpf (){
         return [
-            ['Igor','703.937.781-00','',''],
-            ['Igor','33160667480','',''],
-            ['Gabriel','','','']
+            ['Igor','703.937.781-00','Rua     ','6281765519'],
+            ['Igor','33160667480','Av.      ','62 9 92855617'],
+            ['Gabriel Oliveira Braga','66658742227','Av.      ','62 9 92855617']
         ];
     }
 
     public function providerTestConstructorInvalidCpf (){
         return [
-            ['Igor','111.111.111-11','',''],
-            ['Igor','222.222.222-22','',''],
-            ['Igor','333.333.333-33','',''],
-            ['Igor','444.444.444-44','',''],
-            ['Igor','222.222.222.222-00','',''],
-            ['Igor','2222222200','',''],
-            ['Igor','00000000000000000000000000','',''],
-            ['Gabriel','','','']
+            ['Igor','111.111.111-11','Rua     ','6281765519'],
+            ['Igor','222.222.222-22','Rua     ','6281765519'],
+            ['Igor','333.333.333-33','Rua     ','6281765519'],
+            ['Igor','444.444.444-44','Rua     ','6281765519'],
+            ['Igor','222.222.222.222-00','Rua     ','6281765519'],
+            ['Igor','2222222200','Rua     ','6281765519'],
+            ['Igor','00000000000000000000000000','Rua     ','6281765519'],
+            ['Gabriel','12345679885752','Rua     ','6281765519'],
+            ['Gabriel','12345678901','Rua     ','6281765519']
         ] ;
     }
 
     public function providerTestConstructorValidEndereco (){
         return [
-            ['Igor','','Av. Visconde Taunay',''],
-            ['Gabriel','','','']
+            ['Igor','70393778100','Av. Visconde Taunay','62981765519'],
+            ['Gabriel','66658742227','Av. Ayrton Senna','62 9 92855617']
         ] ;
     }
 

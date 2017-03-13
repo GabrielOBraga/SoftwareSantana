@@ -24,16 +24,25 @@ class Funcionarios extends Model
     protected $nVendas;
 
     public function   __construct(string $nome, string $cpf , string $endereco, string $telefone){
+        // veriica se os campos estão preeenchidos
         if($cpf== null || $nome==null || $endereco==null || $telefone==null){
             throw new InvalidArgument("Todos os campos devem ser preenchidos.");
+        }
+        // verifica se o endereço possui apenas texto
+        if(preg_match("([^a-z])(av.)(Av.)(AV.)(Av)(av)(AV)(av.)(Rua)(rua)([^A-Z])]",$endereco)==1){
+            throw new InvalidArgument("Endereço inválido. ");
         }
 
         if(preg_match("[^0-9]",$telefone)==1 || strlen($telefone)<8 || strlen($telefone)>11){
             throw new InvalidArgument("Telefone deve conter apenas caracteres numéricos/telefone é inválido.");
         }
 
+        if(preg_match("([^a-z])()",$nome)==1 || preg_match("[^A-Z]",$telefone)==1){
+            throw new InvalidArgument("Nome inválido. ");
+        }
+
         if($this->validaCPF == 'false'){
-            throw new InvalidArgument("O CPF informado não é válido.");
+            throw new InvalidArgument("CPF inválido.");
         }
 
 
@@ -43,7 +52,7 @@ class Funcionarios extends Model
         $this->telefone = $telefone;
     }
 
-    function validaCPF($cpf = null) {
+    function validaCPF(string $cpf = null){
 
         // Verifica se um número foi informado
         if(empty($cpf)) {
