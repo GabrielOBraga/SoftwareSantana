@@ -17,6 +17,10 @@ class Funcionarios extends Model
     protected $comissao;
     protected $nVendas;
     public function   __construct(string $nome, string $cpf , string $endereco, string $telefone){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0245d172e6f524bcb01f726d4c7ef87ac8342d3e
         // verifica se os campos estão preeenchidos
         if($cpf == null || $nome == null || $endereco == null || $telefone == null){
             throw new InvalidArgument("Todos os campos devem ser preenchidos.");
@@ -25,16 +29,29 @@ class Funcionarios extends Model
         if(strlen($endereco) < 5) {
             throw new InvalidArgument("Endereço inválido. ");
         }
+<<<<<<< HEAD
         $telefone = $this->formatTelefone($telefone);
         if(preg_match("/[^0-9]/",$telefone)==1 || strlen($telefone) < 8 || strlen($telefone)>9){
             throw new InvalidArgument("Telefone deve conter apenas caracteres numéricos/telefone inválido.");
         }
         if(preg_match("/[^a-z]i/",$nome)==1){
+=======
+
+        if(preg_match("/[^0-9]/",$telefone)==1 || strlen($telefone) < 8 || strlen($telefone)>9){
+            throw new InvalidArgument("Telefone deve conter apenas caracteres numéricos.");
+        }
+
+        if(preg_match("/[^a-z]i/",$nome)==1 || preg_match("[^0-9]",$nome)==1){
+>>>>>>> 0245d172e6f524bcb01f726d4c7ef87ac8342d3e
             throw new InvalidArgument("Nome inválido. ");
         }
         if(!$this->validaCPF($cpf) == 'false'){
             throw new InvalidArgument("CPF inválido.");
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0245d172e6f524bcb01f726d4c7ef87ac8342d3e
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->telefone = $telefone;
