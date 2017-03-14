@@ -204,6 +204,4 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
             ['Gabriel','70393778100','Av. Visconde Taunay','12'],
         ] ;
     }
-
-
 }
