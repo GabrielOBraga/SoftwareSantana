@@ -78,7 +78,8 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     public function testConstructorValidFone(string $name , string $cpf , string $endereco , string $telefone)
     {
         $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-        $this->assertEquals($funcObj1->getFone(),$telefone);
+
+        $this->assertEquals($telefone, $funcObj1->getFone());
     }
 
     /**
@@ -142,7 +143,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
         return [
             ['Igor','70393778100','Av. Visconde Taunay','981765519'],
             ['Gabriel','70393778100','Av. Visconde Taunay','12345678'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','33333333'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','123456789'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
             ['Gabriel','70393778100','Av. Visconde Taunay','1234-5678']
@@ -151,11 +152,10 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
 
     public function providerTestConstructorInvalidFone (){
         return [
-            ['Igor','70393778100','Av. Visconde Taunay',''],
+            ['Igor','70393778100','Av. Visconde Taunay','0'],
             ['Gabriel','70393778100','Av. Visconde Taunay','1234567891112'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','4567-89119'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','4567-89119'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','4567-8'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','54567-89119'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4516'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8'],
             ['Gabriel','70393778100','Av. Visconde Taunay','1234567'],
             ['Gabriel','70393778100','Av. Visconde Taunay','123456'],
