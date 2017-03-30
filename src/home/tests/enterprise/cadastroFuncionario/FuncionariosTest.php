@@ -68,34 +68,6 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if the constructor's endereco is stored correctly
-     * @param string $name
-     * @param string $cpf
-     * @param string $endereco
-     * @param string $telefone
-     * @dataProvider  providerTestConstructorValidEndereco
-     */
-    public function testConstructorValidEndereco (string $name , string $cpf , string $endereco , string $telefone)
-    {
-        $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-    }
-
-    /**
-     * Test if the constructor's endereco is stored correctly
-     * @param string $name
-     * @param string $cpf
-     * @param string $endereco
-     * @param string $telefone
-     * @dataProvider  providerTestConstructorInvalidEndereco
-     * @expectedException \home\errors\InvalidArgument
-     */
-    public function testConstructorInvalidEndereco (string $name , string $cpf , string $endereco , string $telefone)
-    {
-        $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-    }
-
-
-    /**
      * Test if the constructor's telefone is stored correctly
      * @param string $name
      * @param string $cpf
@@ -106,7 +78,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     public function testConstructorValidFone(string $name , string $cpf , string $endereco , string $telefone)
     {
         $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
-        $this->assertEquals($funcObj1->getFone(),$telefone);
+        $this->assertEquals($funcObj1->formatFone($telefone), $funcObj1->getFone());
     }
 
     /**
@@ -133,7 +105,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
 
     public function providerTestConstructorValidName (){
         return [
-            ['Igor Tadayuki Hangui Silva','70393778100','Rua     ','81765519'],
+            ['Igor Tadayuki Hangui','70393778100','Rua     ','81765519'],
             ['Gabriel Oliveira Braga','66658742227','Av.      ','92855617']
         ] ;
     }
@@ -166,20 +138,6 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
         ] ;
     }
 
-    public function providerTestConstructorValidEndereco (){
-        return [
-            ['Igor','70393778100','Av. Visconde Taunay','981765519'],
-            ['Gabriel','66658742227','Av. Ayrton Senna','92855617']
-        ] ;
-    }
-
-    public function providerTestConstructorInvalidEndereco (){
-        return [
-            ['Igor','70393778100','74542424','981765519'],
-            ['Gabriel','70393778100','!@#$%¨&*(','981765519']
-        ] ;
-    }
-
     public function providerTestConstructorValidFone (){
         return [
             ['Igor','70393778100','Av. Visconde Taunay','981765519'],
@@ -193,16 +151,14 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
 
     public function providerTestConstructorInvalidFone (){
         return [
-            ['Igor','70393778100','Av. Visconde Taunay',''],
+            ['Igor','70393778100','Av. Visconde Taunay','0'],
             ['Gabriel','70393778100','Av. Visconde Taunay','1234567891112'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','4567-89119'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','4567-89119'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','4567-8'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','54567-89119'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','4516'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8'],
             ['Gabriel','70393778100','Av. Visconde Taunay','1234567'],
             ['Gabriel','70393778100','Av. Visconde Taunay','123456'],
             ['Gabriel','70393778100','Av. Visconde Taunay','12'],
         ] ;
     }
-}
 }
