@@ -184,7 +184,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
         return [
             ['Igor','70393778100','Av. Visconde Taunay','981765519'],
             ['Gabriel','70393778100','Av. Visconde Taunay','12345678'],
-            ['Gabriel','70393778100','Av. Visconde Taunay','12345678911'],
+            ['Gabriel','70393778100','Av. Visconde Taunay','123456789'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
             ['Gabriel','70393778100','Av. Visconde Taunay','4567-8911'],
             ['Gabriel','70393778100','Av. Visconde Taunay','1234-5678']
@@ -204,4 +204,5 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
             ['Gabriel','70393778100','Av. Visconde Taunay','12'],
         ] ;
     }
+}
 }
