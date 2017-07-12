@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
+
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -36,50 +38,52 @@
     </style>
 
 </head>
-<body background="../../santana/img/fundosantana.png" style="background-size: 100%">
 
-<div style="width: 80%; height: 1100px; background-color: #FFFFFF; margin: 0 10%; position: absolute; top:0">
+<body id="page-top">
 
 <!-- Navigation -->
+<nav id="mainNav" class="navbar fixed-top navbar-toggleable-md navbar-light">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+        Home <i class="fa fa-bars"></i>
+    </button>
 
-<nav class="navbar navbar-default" role="navigation" align="middle" >
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Navegação do Site</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-            <a class="navbar-brand" href="/santana/front.php/index">Otica Santana</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="/santana/front.php/index" title="Home"><form><button type="button" class="btn btn-link">Home</button> </form></a>
+        <a class="navbar-brand page-scroll" href="/santana/front.php/index">Otica Santana</a>
+        <div class="collapse navbar-collapse" id="navbarExample">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#features">Produtos</a>
                 </li>
-                <li>
-                    <a href="/santana/front.php/login" title="Login"><form><button type="button" class="btn btn-link">Login</button></form> </a>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#oticaMovel">Otica Movel</a>
                 </li>
-                <li>
-                    <a href="/santana/front.php/oticaMovel" title="Otica Movel"><form><button type="button" class="btn btn-link">Otica Movel</button></form></a>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">Contato</a>
                 </li>
-                <li>
-                    <a href="/santana/front.php/contato" title="Contato"><form><button type="button" class="btn btn-link">Contato</button></form></a>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="/santana/front.php/login">Login</a>
+                </li>
+                <li class="navbar-toggler">
+                    <a class="nav-link page-scroll" href="">Fechar</a>
                 </li>
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
 
 </nav>
-</nav>
-</div>
-<!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
-<script src="../../santana/bootstrap/js/jquery.js"></script>
-<script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="../../santana/bootstrap/lib/jquery/jquery.min.js"></script>
+<script src="../../santana/bootstrap/lib/tether/tether.min.js"></script>
+<script src="../../santana/bootstrap/lib/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="../../santana/bootstrap/js/new-age.min.js"></script>
+
 </body>
+
 </html>

@@ -19,7 +19,7 @@ $routes= new Routing\RouteCollection();
 
 
 $routes->add('adm_home',new Routing\Route('/adm',[
-            '_controller'=>'home\controller\Controller::admAction'
+            '_controller'=>'home\controller\ControllerAdm::admAction'
         ]
     )
 );
@@ -37,7 +37,7 @@ $routes->add('index_home',new Routing\Route('/index',[
 );
 
 $routes->add('localizacao_home',new Routing\Route('/localizacao',[
-            '_controller'=>'home\controller\Controller::localizacaoAction'
+            '_controller'=>'home\controller\ControllerAdm::localizacaoAction'
         ]
     )
 );
@@ -55,25 +55,25 @@ $routes->add('oticaMovel_home',new Routing\Route('/oticaMovel',[
 );
 
 $routes->add('produtos_home',new Routing\Route('/cProdutos',[
-            '_controller'=>'home\controller\Controller::produtosAction'
+            '_controller'=>'home\controller\ControllerAdm::produtosAction'
         ]
     )
 );
 
 $routes->add('cFuncionario_home',new Routing\Route('/cFuncionario',[
-            '_controller'=>'home\controller\Controller::cFuncionarioAction'
+            '_controller'=>'home\controller\ControllerAdm::cFuncionarioAction'
         ]
     )
 );
 
 $routes->add('sistema_home',new Routing\Route('/sistema',[
-            '_controller'=>'home\controller\Controller::sistemaAction'
+            '_controller'=>'home\controller\ControllerEnter::sistemaAction'
         ]
     )
 );
 
 $routes->add('vendas_home',new Routing\Route('/vendas',[
-            '_controller'=>'home\controller\Controller::vendasAction'
+            '_controller'=>'home\controller\ControllerEnter::vendasAction'
         ]
     )
 );
