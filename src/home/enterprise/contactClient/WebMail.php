@@ -5,9 +5,10 @@
  * Date: 22/02/2017
  * Time: 17:40
  */
-namespace home\enterprise\contactCliente;
+namespace src\home\enterprise\contactCliente;
 
-use home\enterprise\Model;
+use src\home\errors\InvalidArgument;
+use src\home\enterprise\Model;
 
 class WebMail extends Model
 {

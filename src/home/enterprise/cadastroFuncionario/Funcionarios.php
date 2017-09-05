@@ -1,12 +1,13 @@
 <?php
 declare (strict_types=1);
-namespace home\enterprise\cadastroFuncionario;
-use home\enterprise\Model;
-use home\errors\InvalidArgument;
+namespace src\home\enterprise\cadastroFuncionario;
+use src\home\enterprise\Model;
+use src\home\errors\InvalidArgument;
+
 class Funcionarios extends Model
 {
     /**
-     * @var
+     * @var string
      */
     private $telefoneAux;
     /**
@@ -14,19 +15,19 @@ class Funcionarios extends Model
      */
     protected $nome;
     /**
-     * @var
+     * @var string
      */
     protected $cpf;
     /**
-     * @var
+     * @var string
      */
     protected $dataNascimento;
     /**
-     * @var mixed
+     * @var string
      */
     protected $telefone;
     /**
-     * @var
+     * @var string
      */
     protected $email;
     /**
@@ -34,11 +35,11 @@ class Funcionarios extends Model
      */
     protected $endereco;
     /**
-     * @var
+     * @var string
      */
     protected $cep;
     /**
-     * @var
+     * @var string
      */
     protected $salario;
     /**
@@ -81,6 +82,7 @@ class Funcionarios extends Model
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->telefone = $telefone;
+        $this->cpf = $cpf;
     }
 
     /**
@@ -241,7 +243,7 @@ class Funcionarios extends Model
      * @return int
      */
 
-    public function getCpf ( ):int
+    public function getCpf ( ):string
     {
         return $this->cpf;
     }

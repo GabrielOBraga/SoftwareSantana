@@ -7,10 +7,12 @@
  */
 
 namespace home\tests\enterprise\cadastroFuncionario;
-use \home\enterprise\cadastroFuncionario\Funcionarios;
+use src\home\enterprise\cadastroFuncionario\Funcionarios;
 
 
-class FuncionariosTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class FuncionariosTest extends TestCase
 {
     /**
      * Test if the constructor's name is stored correctly
@@ -33,7 +35,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $endereco
      * @param string $telefone
      * @dataProvider  providerTestConstructorInvalidName
-     * @expectedException \home\errors\InvalidArgument
+     * @expectedException \src\home\errors\InvalidArgument
      */
     public function testConstructorInvalidName (string $name , string $cpf , string $endereco , string $telefone)
     {
@@ -51,6 +53,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     public function testValidCpf (string $name , string $cpf , string $endereco , string $telefone)
     {
         $funcObj1 = new Funcionarios($name , $cpf, $endereco ,$telefone );
+        $this->assertEquals($cpf, $funcObj1->getCpf());
     }
 
     /**
@@ -60,7 +63,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $endereco
      * @param string $telefone
      * @dataProvider  providerTestInvalidCpf
-     * @expectedException \home\errors\InvalidArgument
+     * @expectedException \src\home\errors\InvalidArgument
      */
     public function testInvalidCpf (string $name, string $cpf, string $endereco, string $telefone)
     {
@@ -88,7 +91,7 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
      * @param string $endereco
      * @param string $telefone
      * @dataProvider  providerTestConstructorInvalidFone
-     * @expectedException \home\errors\InvalidArgument
+     * @expectedException \src\home\errors\InvalidArgument
      */
     public function testConstructorInvalidFone (string $name , string $cpf , string $endereco , string $telefone)
     {
@@ -119,8 +122,8 @@ class FuncionariosTest extends \PHPUnit_Framework_TestCase
     public function providerTestValidCpf (){
         return [
             ['Igor','703.937.781-00','Rua     ','81765519'],
-            ['Igor','33160667480','Av.      ','92855617'],
-            ['Gabriel Oliveira Braga','66658742227','Av.      ','92855617']
+            ['Igor','331.606.674-80','Av.      ','92855617'],
+            ['Gabriel Oliveira Braga','038.430.111-84','Av.      ','92855617']
         ];
     }
 

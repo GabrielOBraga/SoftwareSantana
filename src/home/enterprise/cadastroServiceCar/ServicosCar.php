@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace home\enterprise\cadastroServiceCar;
+namespace src\home\enterprise\cadastroServiceCar;
 
-use home\enterprise\Model;
-use home\errors\InvalidArgument;
+use src\home\enterprise\Model;
+use src\home\errors\InvalidArgument;
 
 class ServicosCar extends Model
 {
@@ -20,11 +20,6 @@ class ServicosCar extends Model
         if($name== null || $email==null || $fone==null){
             throw new InvalidArgument("Todos os campos devem ser preenchidos.");
         }
-
-        if ( preg_match("/[^a-zA-Z]/'[ ]'/",$name) == 1){
-            throw new InvalidArgument("$name, No Nome deve conter apenas letras");
-        }
-
 
         $this->name = $name;
         $this->email = $email;

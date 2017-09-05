@@ -2,7 +2,7 @@
 
 declare (strict_types=1);
 
-namespace home\enterprise;
+namespace src\home\enterprise;
 
 class Model
 {

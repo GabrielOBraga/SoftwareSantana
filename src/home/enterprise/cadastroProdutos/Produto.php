@@ -1,8 +1,8 @@
 <?php
 declare (strict_types=1);
-namespace home\enterprise\cadastroProdutos;
-use home\enterprise\Model;
-use home\errors\InvalidArgument;
+namespace src\home\enterprise\cadastroProdutos;
+use src\home\enterprise\Model;
+use src\home\errors\InvalidArgument;
 class Produto extends Model
 {
     protected $ref;

@@ -6,7 +6,7 @@
  * Time: 16:32
  */
 
-namespace home\errors;
+namespace src\home\errors;
 
 
 class InvalidArgument extends \Exception
