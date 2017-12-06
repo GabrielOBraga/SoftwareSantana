@@ -65,7 +65,7 @@ class Controller
 
             foreach ($users as $login =>$pwd) {
                 if( $request->request->get('uname')== $login &&
-                    hash("sha256",$request->request->get('psw'))==$pwd )
+                    hash("sha256",$request->request->get('psw'))==$pwd ) //hash alterado
                 {
                     $this->session = new Session();
                     $this->session->set('user',$login);
@@ -75,7 +75,7 @@ class Controller
             }
             foreach ($usersadmin as $login =>$pwd) {
                 if ($request->request->get('uname') == $login &&
-                    hash("sha256", $request->request->get('psw')) == $pwd
+                    hash("sha256", $request->request->get('psw')) == $pwd   //hash alterado
                 ) {
                     $this->session = new Session();
                     $this->session->set('user', $login);
