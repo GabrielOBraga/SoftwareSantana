@@ -1,5 +1,5 @@
 <?php
-namespace  framework;
+namespace  src\framework;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
