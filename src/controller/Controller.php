@@ -57,10 +57,10 @@ class Controller
     {
         if ( $request->getMethod()==  'POST'){
 
-            $users = ['igor'=>'igor'];
+            $users = ['igor'=>'6ab84705e5d695efd532f462bc41ffc7a05f3a097b877dd2b95d168cd9f3b93d'];
 
-            $usersadmin = ['admin'=>'admin',
-                'gabriel'=>'gabriel'];
+            $usersadmin = ['admin'=>'8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+                'gabriel'=>'ff06535ac1029cca2fc2b86ac7355a7b4e0b8d839fc76b51d30833f4e1347ddc'];
 
 
             foreach ($users as $login =>$pwd) {

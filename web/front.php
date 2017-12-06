@@ -133,4 +133,8 @@ $response->send();
 
 ?>
 </body>
+<!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
+<script src="../../santana/bootstrap/js/jquery.js"></script>
+<script src="../../santana/bootstrap/js/bootstrap.min.js"></script>
+
 </html>

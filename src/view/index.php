@@ -1,8 +1,6 @@
 ﻿<!DOCTYPE html>
 <?php include(__DIR__ . "/../view/fix/header.php") ?>
 
-<body id="page-top">
-
 <header>
     <div class="container">
         <div class="row">
@@ -177,16 +175,4 @@
     </div>
 </section>
 
-<!-- Bootstrap core JavaScript -->
-<script src="../../santana/bootstrap/lib/jquery/jquery.min.js"></script>
-<script src="../../santana/bootstrap/lib/tether/tether.min.js"></script>
-<script src="../../santana/bootstrap/lib/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-<!-- Theme JavaScript -->
-<script src="../../santana/bootstrap/js/new-age.min.js"></script>
-
-</body>
 <?php include(__DIR__ . "/../view/fix/footer.php") ?>
