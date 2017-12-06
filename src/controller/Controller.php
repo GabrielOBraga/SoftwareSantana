@@ -2,10 +2,12 @@
 declare (strict_types=1);
 namespace  src\controller;
 
+
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Plasticbrain\FlashMessages\FlashMessages;
 
 use src\enterprise\cadastroProdutos\produto;
 
@@ -23,8 +25,6 @@ class Controller
 
     public function indexAction (Request $request){
         $this->session= new Session();
-        if ( $request->getMethod()=='POST'){
-        }
         ob_start();
         include sprintf(__DIR__ . '/../view/index.php');
         return new Response( ob_get_clean());
@@ -39,6 +39,7 @@ class Controller
 
         if ( $request->getMethod()=='POST'){
             try{
+                //implementar o recebimento do formulario de contato
             }
             catch ( InvalidArgument $e){
                 $error=$e->getMessage();
@@ -55,17 +56,19 @@ class Controller
 
     public function  loginAction ( Request $request)
     {
+
         if ( $request->getMethod()==  'POST'){
 
-            $users = ['igor'=>'6ab84705e5d695efd532f462bc41ffc7a05f3a097b877dd2b95d168cd9f3b93d'];
+            $users = ['igor'=>'73f6329219d4994f2acb7ac7280f6c18da346aefee01b7749596daf1cd01b4e8',
+                'user'=>'08541a1932cfd4240a0c60cc03b46eadd9c3e369cad32c0789d9c795062bb6a0'];
 
-            $usersadmin = ['admin'=>'8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
-                'gabriel'=>'ff06535ac1029cca2fc2b86ac7355a7b4e0b8d839fc76b51d30833f4e1347ddc'];
+            $usersadmin = ['admin'=>'e0c7dd217f6cd20d8f729e82c67d1382a078b9a5b94199e87bd4d424dec18dc1',
+                'gabriel'=>'c86567fd32867a35109099eb2ccd2058eb6b28b7632bb8c217fa965060f12bb9'];
 
 
             foreach ($users as $login =>$pwd) {
                 if( $request->request->get('uname')== $login &&
-                    hash("sha256",$request->request->get('psw'))==$pwd ) //hash alterado
+                    hash("sha256",$request->request->get('psw') . 'OiAlessandro')==$pwd ) //hash alterado
                 {
                     $this->session = new Session();
                     $this->session->set('user',$login);
@@ -75,7 +78,7 @@ class Controller
             }
             foreach ($usersadmin as $login =>$pwd) {
                 if ($request->request->get('uname') == $login &&
-                    hash("sha256", $request->request->get('psw')) == $pwd   //hash alterado
+                    hash("sha256", $request->request->get('psw') . 'OiAlessandro') == $pwd   //hash alterado
                 ) {
                     $this->session = new Session();
                     $this->session->set('user', $login);
@@ -83,7 +86,10 @@ class Controller
                 }
             }
 
-            //colocar um flash message
+            $msg = new FlashMessages();
+            $msg->error("Nome de usuário e/ou senha incorretos.");
+            $msg->display();
+
         }
         return $this->render_view('login');
     }

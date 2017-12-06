@@ -2,6 +2,7 @@
 declare (strict_types=1);
 namespace  src\controller;
 
+use Plasticbrain\FlashMessages\FlashMessages;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -55,7 +56,6 @@ class ControllerAdm
 
     }
 
-
     public function admAction (Request $request){
         $this->session = new Session();
         $permission = ['admin' , 'gabriel'];
@@ -87,7 +87,10 @@ class ControllerAdm
         $this->session= new Session();
         $user = $this->session->get('user');
         if ( !in_array($user,$permission)){
-            //add flash message
+            $msg = new FlashMessages();
+            $msg->error("Voce não possui permissão para acessar esta pagina");
+            $msg->display();
+
             return new RedirectResponse('index');
         }
 
@@ -182,5 +185,4 @@ class ControllerAdm
         include sprintf(__DIR__."/../view/$route.php");
         return new Response (ob_get_clean());
     }
-
 }
