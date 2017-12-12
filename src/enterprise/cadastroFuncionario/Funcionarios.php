@@ -39,15 +39,15 @@ class Funcionarios extends Model
      */
     protected $cep;
     /**
-     * @var string
+     * @var float
      */
     protected $salario;
     /**
-     * @var
+     * @var integer
      */
     protected $comissao;
     /**
-     * @var
+     * @var integer
      */
     protected $nVendas;
 
@@ -59,7 +59,6 @@ class Funcionarios extends Model
      * @param string $telefone
      * @throws InvalidArgument
      */
-
     public function   __construct(string $nome, string $cpf , string $endereco, string $telefone){
         // verifica se os campos estão preeenchidos
         if($cpf == null || $nome == null || $endereco == null || $telefone == null){
@@ -86,10 +85,9 @@ class Funcionarios extends Model
     }
 
     /**
-     * @param $telefone
-     * @return mixed
+     * @param string $telefone
+     * @return string
      */
-
     function formatTelefone($telefone) {
 
         $telefone = str_replace("-", "", $telefone);
@@ -99,11 +97,10 @@ class Funcionarios extends Model
     }
 
     /**
-     * @param string|null $cpf
+     * @param string $cpf
      * @return bool
      */
-
-    function validaCPF(string $cpf = null){
+    function validaCPF(string $cpf){
         // Verifica se um número foi informado
         if(empty($cpf)) {
             return false;
@@ -147,9 +144,8 @@ class Funcionarios extends Model
     }
 
     /**
-     * @param $email
+     * @param string $email
      */
-
     public function setEmail($email)
     {
         $this->email = $email;
@@ -158,7 +154,6 @@ class Funcionarios extends Model
     /**
      * @param float $salario
      */
-
     public function setSalario(float $salario)
     {
         $this->salario = $salario;
@@ -167,7 +162,6 @@ class Funcionarios extends Model
     /**
      * @param float $comissao
      */
-
     public function setComissao(float $comissao)
     {
         $this->comissao = $comissao;
@@ -176,7 +170,6 @@ class Funcionarios extends Model
     /**
      * @param int $vendas
      */
-
     public function setVendas(int $vendas)
     {
         $this->vendas = $vendas;
@@ -186,7 +179,6 @@ class Funcionarios extends Model
      * @param string $fone
      * @return bool
      */
-
     public function setFone(string $fone):bool
     {
         $this->fone = $fone;
@@ -197,7 +189,6 @@ class Funcionarios extends Model
      * @param string $fone
      * @return mixed
      */
-
     public function formatFone(string $fone){
         $telefone = $this->formatTelefone($fone);
         return $telefone;
@@ -206,7 +197,6 @@ class Funcionarios extends Model
     /**
      * @param string $nascimento
      */
-
     public function setNascimento(string $nascimento)
     {
         $this->dataNascimento = $nascimento;
@@ -215,7 +205,6 @@ class Funcionarios extends Model
     /**
      * @param $cep
      */
-
     public function setCep($cep)
     {
         $this->cep = $cep;
@@ -224,7 +213,6 @@ class Funcionarios extends Model
     /**
      * @param string $endereco
      */
-
     public function setEndereco(string $endereco)
     {
         $this->endereco = $endereco;
@@ -233,16 +221,14 @@ class Funcionarios extends Model
     /**
      * @param $nVendas
      */
-
     public function setNVendas($nVendas)
     {
         $this->nVendas = $nVendas;
     }
 
     /**
-     * @return int
+     * @return string
      */
-
     public function getCpf ( ):string
     {
         return $this->cpf;
@@ -251,7 +237,6 @@ class Funcionarios extends Model
     /**
      * @return string
      */
-
     public function getNome ( ):string {
         return $this->nome;
     }
@@ -259,7 +244,6 @@ class Funcionarios extends Model
     /**
      * @return float
      */
-
     public function getSalario():float
     {
         return $this->salario;
@@ -268,7 +252,6 @@ class Funcionarios extends Model
     /**
      * @return float
      */
-
     public function getComissao():float
     {
         return $this->comissao;
@@ -278,7 +261,6 @@ class Funcionarios extends Model
      * @return float
      * Retorna o salário calculado
      */
-
     public function calcularSalario ()
     {
         $this->setSalario($this->getSalario() + $this->nVendas * $this->getComissao());
@@ -286,9 +268,8 @@ class Funcionarios extends Model
     }
 
     /**
-     * zera o valor das vendas
+     * @info zera o valor das vendas
      */
-
     public function resetVendas ()
     {
         $this->vendas = 0;
@@ -297,7 +278,6 @@ class Funcionarios extends Model
     /**
      * @return string
      */
-
     public function getFone():string
     {
         return $this->telefone;
@@ -306,7 +286,6 @@ class Funcionarios extends Model
     /**
      * @return string
      */
-
     public function getIdAttribute()
     {
         return 'cpf';
@@ -315,7 +294,6 @@ class Funcionarios extends Model
     /**
      * @return string
      */
-
     public function  getClassName()
     {
         return 'Funcionarios';
