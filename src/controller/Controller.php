@@ -2,7 +2,6 @@
 declare (strict_types=1);
 namespace  src\controller;
 
-
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,11 +15,10 @@ use src\enterprise\cadastroServiceCar\servicosCar;
 use src\enterprise\contactCliente\webmail;
 use src\errors\InvalidArgument;
 
-
 class Controller
 {
     protected $newLogin;
-    protected  $session;
+    protected $session;
     protected $produtos;
 
     public function indexAction (Request $request){
@@ -53,8 +51,7 @@ class Controller
         return new Response( ob_get_clean());
     }
 
-
-    public function  loginAction ( Request $request)
+    public function loginAction ( Request $request)
     {
 
         if ( $request->getMethod()==  'POST'){

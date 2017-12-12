@@ -1,7 +1,8 @@
 <?php
 declare (strict_types=1);
 namespace src\enterprise\cadastroFuncionario;
-use src\enterprise\Model;
+use src\enterprise\errors\InvalidCPF;
+use src\enterprise\persistence;
 use src\errors\InvalidArgument;
 
 class Funcionarios extends Model
@@ -58,6 +59,7 @@ class Funcionarios extends Model
      * @param string $endereco
      * @param string $telefone
      * @throws InvalidArgument
+     * @throws InvalidCPF
      */
     public function   __construct(string $nome, string $cpf , string $endereco, string $telefone){
         // verifica se os campos estão preeenchidos
@@ -76,7 +78,7 @@ class Funcionarios extends Model
             throw new InvalidArgument("Nome inválido. ");
         }
         if(!$this->validaCPF($cpf) == 'false'){
-            throw new InvalidArgument("CPF inválido.");
+            throw new InvalidCPF("CPF inválido.");
         }
         $this->nome = $nome;
         $this->endereco = $endereco;

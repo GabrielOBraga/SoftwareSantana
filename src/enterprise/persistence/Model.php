@@ -4,6 +4,8 @@ declare (strict_types=1);
 
 namespace src\enterprise\persistence;
 
+use src\enterprise\errors\IDnotFound;
+
 class Model
 {
     public static function load(int $id): PersistenceInterface
@@ -56,6 +58,28 @@ class Model
             PHP_EOL, $strings));
     }
 
+    public static function search(array $parameters = array()):array
+    {
+        $local = __DIR__.'/../../web/'.static::getClassName().".txt";
+        $contents=file_get_contents($local);
+        $strings= explode(PHP_EOL,$contents);
+        $result = [];
+        foreach ($strings as $str){
+            $obj=unserialize($str);
+            $flag = true;
+            foreach ($parameters as $membro => $value){
+                //$attribute=static::getIdAttribute();
+                //call_user_func_array(static::getClassName(), array("get".$p));
+                if($obj->$membro != $value){
+                    $flag = false;
+                }
+            }
+            if($flag){
+                $result[] = $obj;
+            }
+        }
+        return $result;
+    }
 
     public function getIdAttribute()
     {
